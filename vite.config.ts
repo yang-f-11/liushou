@@ -9,12 +9,28 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 export default defineConfig({
   plugins: [
     vue(),
-    vueJsx(),
-    vueDevTools(),
+    // vueJsx(),
+    // vueDevTools(),
   ],
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     },
   },
+  server: {
+    host: '0.0.0.0',  // 域名设置
+    port: 3000,
+  }
 })
+
+// module.exports = {
+//   devServer: {
+//     proxy: {
+//       '/api': {
+//         target: 'https://www.deepseek.com',
+//         changeOrigin: true,
+//         pathRewrite: { '^/api': '' },  // 代理时将 "/api" 替换为空
+//       },
+//     },
+//   },
+// };
