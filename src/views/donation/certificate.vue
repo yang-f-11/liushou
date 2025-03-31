@@ -1,9 +1,5 @@
 <template>
-    <div>
-        <el-breadcrumb separator="/">
-            <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-            <el-breadcrumb-item><a href="/donation/certificate">证书申领</a></el-breadcrumb-item>
-        </el-breadcrumb>   
+    <div> 
         <!-- 以下为正文 -->
         
         <h1>证书申领说明</h1>   

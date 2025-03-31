@@ -12,10 +12,6 @@ const images = ref([
 import { useRouter } from 'vue-router';
 const router = useRouter();
 
-const navigateTo = (path: string) => {
-  router.push(path);
-};
-
 const carouselItems = ref([
   'activity/act1.jpg',
   'activity/act2.jpg',
@@ -102,11 +98,39 @@ import { project } from "@/stores/pages";
 const pj = project()
 const project_overview = ref(pj.project_overview);
 const demo = ref(pj.demo)
+const info = ref(pj.info)
+const news = ref(pj.news)
+const Video = ref(pj.video)
+const charity = ref(pj.charity)
 </script>
 
 <template>
   <el-container>
-    <el-header style="padding: 0;"><Header /></el-header>
+    <el-header style="padding: 0;">
+      <div style="height: 100px;" class="header-top">
+
+        <div class="logo-and-name">
+          <img class="logo-img" src="@/assets/logo.png" alt="Logo" />
+          <span class="platform-name">童心智联公益平台</span>
+        </div>
+        
+        <div class="slogan">
+          <h1>孤影不孤，心声有应</h1>
+        </div>
+
+        <div class="search-box">
+          <el-input placeholder="请输入搜索内容">
+            <template #append>
+              <el-button>
+                <el-icon><Search /></el-icon>
+              </el-button>
+            </template>
+          </el-input>
+        </div>
+      </div>
+      <Header></Header>
+    </el-header>
+    <div style="height: 120px;"></div>
     <el-main class="main_pattern">
         <div class="block text-center">
             <el-carousel height="500px">
@@ -134,14 +158,13 @@ const demo = ref(pj.demo)
     <el-main class="main_pattern">
       <el-row :gutter="20">
         <Block title="项目概述" morePath="/project-overview" :Span="8" :items="project_overview"></Block>
-        <Block title="最新动态" morePath="/news" :Span="8" :items="demo"></Block>
-        <Block title="公益模块" morePath="/process-module" :Span="8" :items="demo"></Block>
+        <Block title="最新动态" morePath="/news" :Span="8" :items="news"></Block>
+        <Block title="公益模块" morePath="/charity-page" :Span="8" :items="charity"></Block>
       </el-row> 
 
       <el-row :gutter="20">
-        <Block title="书籍推荐" morePath="/process-module" :Span="8" :items="demo"></Block>
-        <Block title="视频推荐" morePath="/process-module" :Span="8" :items="demo"></Block>
-        <Block title="信息公开" morePath="/process-module" :Span="8" :items="demo"></Block>
+        <Block title="视频推荐" morePath="/process-module" :Span="12" :items="Video"></Block>
+        <Block title="信息公开" morePath="/info-pages" :Span="12" :items="info"></Block>
       </el-row>   
       
       <el-row>
@@ -169,7 +192,7 @@ const demo = ref(pj.demo)
     
     <el-main class="main_pattern">
       <section class="autism-books">
-        <h2>自闭症相关书籍</h2>
+        <h2>推荐书籍</h2>
         <el-row :gutter="20">
           <el-col
             v-for="book in books"

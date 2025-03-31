@@ -30,7 +30,7 @@ const onSubmit = async () => {
     return;
   }
   try {
-    const response = await axios.post('http://localhost:8000/api/login/', {
+    const response = await axios.post('http://47.120.56.172:8000/api/login/', {
       nickname: form.nickname,
       password: form.pass,
     })

@@ -1,9 +1,5 @@
 <template>
     <div>
-        <el-breadcrumb separator="/">
-            <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-            <el-breadcrumb-item><a href="/donation/subsidy">政府补贴</a></el-breadcrumb-item>
-        </el-breadcrumb>   
         <!-- 以下为正文 -->
         <h1>公益项目资助</h1>   
         <div>

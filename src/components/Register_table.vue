@@ -64,7 +64,7 @@ const onSubmit = async () => {
     }
     else if(ruleForm.checkPass === ruleForm.pass){
         try {
-            const response = await axios.post('http://localhost:8000/api/register/', data);
+            const response = await axios.post('http://47.120.56.172:8000/api/register/', data);
             ElMessage.success('注册成功')
             console.log('注册成功:', response.data);
             router.push('/login');

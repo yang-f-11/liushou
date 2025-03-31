@@ -1,10 +1,6 @@
 <template>
 
     <div>
-        <el-breadcrumb separator="/">
-            <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-            <el-breadcrumb-item><a href="/donation/methods/one">短信捐赠</a></el-breadcrumb-item>
-        </el-breadcrumb>   
         <!-- 以下为正文 -->
         <h1>捐款须知</h1>   
         <div>感谢您的爱心捐款！在接收到您的捐款并确认到账后，我们会为您提供公益事业捐赠统一票据及感谢信，请您在捐款时提供正确的电子邮箱地址，以便我们为您发送电子捐赠票据和感谢信。
